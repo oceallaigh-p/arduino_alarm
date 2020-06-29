@@ -25,8 +25,8 @@ const int FREQUENCY_CLOSE  = 2500;  // Frequency of tone in hertz
 const int DURATION_CLOSE   = 100;   // Duration of tone in milliseconds
 const int DISTANCE_FAR     = 36;    // Distance alarm begins to sound
 const int DISTANCE_CLOSE   = 12;    // Distance alarm frequency increases
-const int TONE_DELAY_FAR   = DURATION_FAR * 2.00;     // Time between tones
-const int TONE_DELAY_CLOSE = DURATION_CLOSE * 1.25;   // Time between tones
+const int TONE_DELAY_FAR   = DURATION_FAR * 2.00;     // Time between tones for far distance
+const int TONE_DELAY_CLOSE = DURATION_CLOSE * 1.25;   // Time between tones for close distance
 const unsigned long TOUCH_DELAY = 500;    // Delay for touch sensor in milliseconds
 
 
