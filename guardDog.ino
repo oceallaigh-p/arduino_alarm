@@ -17,8 +17,8 @@
 // Constants
 const int TRIG_PIN   = 12;    // Attach Arduino pin D12 to Trigger Pin of HC-SR04
 const int ECHO_PIN   = 13;    // Attach Arduino pin D13 to Echo Pin of HC-SR04
-const int BUZZER_PIN = 8;     // Attach Arduino pin D 11 to Positive Pin of Buzzer
-const int TOUCH_PIN  = 2;     // Attach Arduino pin D 2 to Signal Pin of Touch Senor
+const int BUZZER_PIN = 8;     // Attach Arduino pin D11 to Positive Pin of Buzzer
+const int TOUCH_PIN  = 2;     // Attach Arduino pin D2 to Signal Pin of Touch Senor
 const int FREQUENCY_FAR    = 2500;  // Frequency of tone in hertz
 const int DURATION_FAR     = 500;   // Duration of tone in milliseconds
 const int FREQUENCY_CLOSE  = 2500;  // Frequency of tone in hertz
