@@ -1,23 +1,23 @@
 /*
  *      Name:   Paidraig O'Ceallaigh
- *      
+ *
  *      Date:   26 June 2020
- *      
+ *
  *      Title:  Arduino Project - "Guard Dog"
- *      
+ *
  *      Purpose: Use the Arduino to create an intruder detection system.
  *               It uses a touch sensor to arm and disarm the system and
- *               an ultrasonic sensor (HC-SR04) to detect possible intruders. 
- *               If an intruder is detected, the buzzer will sound and a 
+ *               an ultrasonic sensor (HC-SR04) to detect possible intruders.
+ *               If an intruder is detected, the buzzer will sound and a
  *               message will be written to Serial Monitor
- *      
+ *
  */
 
 
 // Constants
 const int TRIG_PIN   = 12;    // Attach Arduino pin D3 to Trigger Pin of HC-SR04
 const int ECHO_PIN   = 13;    // Attach Arduino pin D2 to Echo Pin of HC-SR04
-const int BUZZER_PIN = 8;     // Attach Arduino pin D 11 to Positive Pim of Buzzer
+const int BUZZER_PIN = 8;     // Attach Arduino pin D 11 to Positive Pin of Buzzer
 const int TOUCH_PIN  = 2;     // Attach Arduino pin D 2 to Signal Pin of Touch Senor
 const int FREQUENCY_FAR    = 2500;  // Frequency of tone in hertz
 const int DURATION_FAR     = 500;   // Duration of tone in milliseconds
@@ -25,7 +25,7 @@ const int FREQUENCY_CLOSE  = 2500;  // Frequency of tone in hertz
 const int DURATION_CLOSE   = 100;   // Duration of tone in milliseconds
 const int DISTANCE_FAR     = 36;    // Distance alarm begins to sound
 const int DISTANCE_CLOSE   = 12;    // Distance alarm frequency increases
-const int TONE_DELAY_FAR   = DURATION_FAR * 2.00;     // Time between tones 
+const int TONE_DELAY_FAR   = DURATION_FAR * 2.00;     // Time between tones
 const int TONE_DELAY_CLOSE = DURATION_CLOSE * 1.25;   // Time between tones
 const unsigned long TOUCH_DELAY = 500;    // Delay for touch sensor in milliseconds
 
@@ -43,10 +43,10 @@ void setup() {
   // Begin serial communication at 9600 baud
   Serial.begin(9600);
 
-  // Set the start time 
+  // Set the start time
   start_time = millis();
 
-  // Configure the pins as input/output 
+  // Configure the pins as input/output
   pinMode(TRIG_PIN, OUTPUT);
   pinMode(ECHO_PIN, INPUT);
   pinMode(BUZZER_PIN, OUTPUT);
@@ -65,16 +65,16 @@ void setup() {
 
 // Function that gets the distance of the intruder
 int getDistance() {
-  
+
   // Clears the Trigger Pin condition
   digitalWrite(TRIG_PIN, LOW);
   delayMicroseconds(2);
-  
+
   // Sets the trigPin HIGH (ACTIVE) for 10 microseconds
   digitalWrite(TRIG_PIN, HIGH);
   delayMicroseconds(10);
   digitalWrite(TRIG_PIN, LOW);
-  
+
   // Reads the Echo Pin and returns the sound wave travel time (microseconds)
   long duration = pulseIn(ECHO_PIN, HIGH);
 
@@ -131,7 +131,7 @@ void loop() {
 
     // Store intruder distance
     int distance = getDistance();
-    
+
     if (distance > DISTANCE_CLOSE && distance < DISTANCE_FAR ) {
       activateBuzzer(FREQUENCY_FAR, DURATION_FAR, TONE_DELAY_FAR);
       Serial.print("Intruder detected: ");
