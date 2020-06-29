@@ -17,17 +17,17 @@
 // Constants
 const int TRIG_PIN   = 12;    // Attach Arduino pin D12 to Trigger Pin of HC-SR04
 const int ECHO_PIN   = 13;    // Attach Arduino pin D13 to Echo Pin of HC-SR04
-const int BUZZER_PIN = 8;     // Attach Arduino pin D11 to Positive Pin of Buzzer
+const int BUZZER_PIN = 8;     // Attach Arduino pin D8 to Positive Pin of Buzzer
 const int TOUCH_PIN  = 2;     // Attach Arduino pin D2 to Signal Pin of Touch Senor
-const int FREQUENCY_FAR    = 2500;  // Frequency of tone in hertz
-const int DURATION_FAR     = 500;   // Duration of tone in milliseconds
-const int FREQUENCY_CLOSE  = 2500;  // Frequency of tone in hertz
-const int DURATION_CLOSE   = 100;   // Duration of tone in milliseconds
-const int DISTANCE_FAR     = 36;    // Distance alarm begins to sound
-const int DISTANCE_CLOSE   = 12;    // Distance alarm frequency increases
+const int FREQUENCY_FAR    = 2500;  // Frequency of tone (in hertz)
+const int DURATION_FAR     = 500;   // Duration of tone (in milliseconds)
+const int FREQUENCY_CLOSE  = 2500;  // Frequency of tone (in hertz)
+const int DURATION_CLOSE   = 100;   // Duration of tone (in milliseconds)
+const int DISTANCE_FAR     = 36;    // Distance alarm begins to sound (in inches)
+const int DISTANCE_CLOSE   = 12;    // Distance alarm frequency increases (in inches)
 const int TONE_DELAY_FAR   = DURATION_FAR * 2.00;     // Time between tones for far distance
 const int TONE_DELAY_CLOSE = DURATION_CLOSE * 1.25;   // Time between tones for close distance
-const unsigned long TOUCH_DELAY = 500;    // Delay for touch sensor in milliseconds
+const unsigned long TOUCH_DELAY = 500;    // Delay for touch sensor (in milliseconds)
 
 
 // Variables
