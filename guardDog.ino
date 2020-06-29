@@ -145,5 +145,4 @@ void loop() {
       Serial.println(" inches away.");
     }
   }
-
 }
